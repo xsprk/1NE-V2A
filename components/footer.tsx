@@ -12,7 +12,7 @@ export function Footer() {
                     <Link href="https://qianniu.city" className="hover:underline me-4 md:me-6">About</Link>
                 </li>
                 <li>
-                    <Link href="https://github.com/qianniucity/vedio2audio" className="hover:underline">Github</Link>
+                    <Link href="https://github.com/qianniucity/video2audio" className="hover:underline">Github</Link>
                 </li>
             </ul>
         </footer>

@@ -102,9 +102,7 @@ export default function FfmpegFileTrans({
                             <option value="WAV">WAV</option>
                             <option value="MP3">MP3</option>
                             <option value="FLAC">FLAC</option>
-                            <option value="WMA">WMA</option>
-                            <option value="AAC">AAC</option>
-                            <option value="AMR">AMR</option>
+                            <option value="MP4">MP4</option>
                         </select>
                     </form>
                     <button

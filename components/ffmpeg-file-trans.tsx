@@ -24,10 +24,11 @@ export default function FfmpegFileTrans({
     const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedValue = event.target.value;
         setAudioType(selectedValue);
-        if (step === 2) {
+        if (step >= 2) {
             setWavURL(null)
             setDownloadFileName(null)
             setStep(1)
+            if (messageRef.current) messageRef.current.innerHTML = "";
         }
 
     };

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { FFmpeg } from '@ffmpeg/ffmpeg'
 import { fetchFile, toBlobURL } from '@ffmpeg/util'
+import { sendGTMEvent } from "@next/third-parties/google";
 
 interface FfmpegFileTransProps extends React.HTMLAttributes<HTMLDivElement> {
     file: File | null;
@@ -60,6 +61,8 @@ export default function FfmpegFileTrans({
         const originalFileName = file.name;
         // get the file name without extension
         const fileNameWithoutExtension = originalFileName.replace(/\.[^/.]+$/, "");
+        // get the file extension
+        const fileExtension = originalFileName.split('.').pop();
         // write the file to the file system
         await ffmpeg.writeFile(originalFileName, await fetchFile(file));
         // transcode the file
@@ -71,6 +74,8 @@ export default function FfmpegFileTrans({
         // set the download file name
         setDownloadFileName(`${fileNameWithoutExtension}.${audioType}`);
         setStep(2);
+        // send the event to Google Tag Manager
+        sendGTMEvent({ event: "transcode", value: fileExtension + " to " + audioType });
     };
 
     const downloadFile = async () => {

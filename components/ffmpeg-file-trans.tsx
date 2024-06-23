@@ -4,12 +4,14 @@ import { fetchFile, toBlobURL } from '@ffmpeg/util'
 
 interface FfmpegFileTransProps extends React.HTMLAttributes<HTMLDivElement> {
     file: File | null;
+    setFile: React.Dispatch<React.SetStateAction<File | null>>;
     step: number;
     setStep: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export default function FfmpegFileTrans({
     file,
+    setFile,
     step,
     setStep,
 }: FfmpegFileTransProps) {
@@ -22,7 +24,12 @@ export default function FfmpegFileTrans({
     const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedValue = event.target.value;
         setAudioType(selectedValue);
-        setStep(1)
+        if (step === 2) {
+            setWavURL(null)
+            setDownloadFileName(null)
+            setStep(1)
+        }
+
     };
 
     // inside the component
@@ -69,6 +76,14 @@ export default function FfmpegFileTrans({
         setStep(3)
     }
 
+    const reset = () => {
+        setFile(null);
+        setStep(0);
+        setWavURL(null);
+        setDownloadFileName(null);
+        if (messageRef.current) messageRef.current.innerHTML = "";
+    }
+
     return (
         <>
             <div className="bg-white border-gray-200 dark:border-gray-600 dark:bg-gray-900">
@@ -113,13 +128,12 @@ export default function FfmpegFileTrans({
                         </a>
                     )}
                     <button
-                        onClick={() => setStep(0)}
+                        onClick={reset}
                         type="button"
                         className="text-white bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
                     >
                         Reset
                     </button>
-
                     <p ref={messageRef}></p>
                 </div>
             </div>

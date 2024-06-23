@@ -20,7 +20,7 @@ export default function Files({
         <Step step={step} />
         <VideoUploader file={file} setFile={setFile} setStep={setStep} />
         <NoSSRWrapper>
-          <FfmpegFileTrans file={file} step={step} setStep={setStep} />
+          <FfmpegFileTrans file={file} setFile={setFile} step={step} setStep={setStep} />
         </NoSSRWrapper>
       </div>
     </div>

@@ -91,56 +91,52 @@ export default function FfmpegFileTrans({
     }
 
     return (
-        <>
-            <div className="bg-white border-gray-200 dark:border-gray-600 dark:bg-gray-900">
-                <div className=" mx-auto max-w-screen-xl p-4">
-                    <form className=" mx-auto py-4">
-                        <label htmlFor="audio" className="">Choose Audio Type</label>
-                        <select
-                            onChange={handleSelectChange}
-                            id="audio"
-                            name="audio"
-                            defaultValue="WAV"
-                            className="bg-gray-50 border border-gray-300 mr-5 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            required
-                        >
-                            <option value="WAV">WAV</option>
-                            <option value="MP3">MP3</option>
-                            <option value="FLAC">FLAC</option>
-                            <option value="MP4">MP4</option>
-                        </select>
-                    </form>
-                    <button
-                        onClick={transcode}
-                        disabled={!file}
-                        type="button"
-                        className={`text-white mr-5  focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  focus:outline-none ${file && step === 1 ? "bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 " : "bg-gray-500"}`}
+        <div className=" border-gray-200 dark:border-gray-600 dark:bg-gray-900">
+            <div className="mx-auto max-w-screen-xl p-4">
+                <form className=" mx-auto py-4">
+                    <label htmlFor="audio" className="">Choose Audio Type</label>
+                    <select
+                        onChange={handleSelectChange}
+                        id="audio"
+                        name="audio"
+                        defaultValue="WAV"
+                        className="bg-gray-50 border border-gray-300 mr-5 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        required
                     >
-                        Transcode to {audioType}
-                    </button>
+                        <option value="WAV">WAV</option>
+                        <option value="MP3">MP3</option>
+                        <option value="FLAC">FLAC</option>
+                        <option value="MP4">MP4</option>
+                    </select>
+                </form>
+                <button
+                    onClick={transcode}
+                    disabled={!file}
+                    type="button"
+                    className={`text-white mr-5  focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  focus:outline-none ${file && step === 1 ? "bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 " : "bg-gray-500"}`}
+                >
+                    Transcode to {audioType}
+                </button>
 
-
-
-                    {wavURL && downloadFileName && step === 2 && (
-                        <a
-                            href={wavURL}
-                            download={downloadFileName}
-                            onClick={downloadFile}
-                            className="text-white mr-5 bg-purple-500 hover:bg-purple-700  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
-                        >
-                            Download {audioType}
-                        </a>
-                    )}
-                    <button
-                        onClick={reset}
-                        type="button"
-                        className="text-white bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+                {wavURL && downloadFileName && step === 2 && (
+                    <a
+                        href={wavURL}
+                        download={downloadFileName}
+                        onClick={downloadFile}
+                        className="text-white mr-5 bg-purple-500 hover:bg-purple-700  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
                     >
-                        Reset
-                    </button>
-                    <p ref={messageRef}></p>
-                </div>
+                        Download {audioType}
+                    </a>
+                )}
+                <button
+                    onClick={reset}
+                    type="button"
+                    className="text-white bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+                >
+                    Reset
+                </button>
+                <p ref={messageRef}></p>
             </div>
-        </>
+        </div>
     )
 }

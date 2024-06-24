@@ -20,10 +20,10 @@ export function SelectAudio({
         setStep(2)
     };
 
-    // 在组件内部
+    // inside the component
     useEffect(() => {
         console.log("audioType updated", audioType);
-    }, [audioType]); // 依赖数组中的 audioType 表示这个 useEffect 会在 audioType 改变后执行
+    }, [audioType]); // the audioType in the dependency array means this useEffect will run after audioType changes
 
     return (
         <form className=" mx-auto py-4">

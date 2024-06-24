@@ -26,20 +26,19 @@ export default function VideoUploader({
     (event: ChangeEvent<HTMLInputElement>) => {
       console.log(event.currentTarget.files);
       const file = event.currentTarget.files?.[0];
-      if (file) {
-        if (file.size / 1024 / 1024 > 500) {
-          toast.error("File size too big (max 50MB).")
-        } else {
-          setFile(file);
-          setStep(1)
-          const reader = new FileReader();
-          reader.onload = (e) => {
-            if (e.target) {
-              setData((prev) => ({ ...prev, audio: e.target?.result as string }));
-            }
-          };
-          reader.readAsDataURL(file);
-        }
+      if (!file) return
+      if (file.size / 1024 / 1024 > 500) {
+        toast.error("File size too big (max 50MB).")
+      } else {
+        setFile(file);
+        setStep(1)
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          if (e.target) {
+            setData((prev) => ({ ...prev, audio: e.target?.result as string }));
+          }
+        };
+        reader.readAsDataURL(file);
       }
     },
     []

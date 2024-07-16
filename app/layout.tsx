@@ -3,8 +3,8 @@ import '@/styles/globals.css';
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 import { Footer } from "@/components/footer";
 import { HeaderMenu } from "@/components/HeaderMenu";
-import { ThemeProvider } from 'next-themes'
 import { inter } from '@/components/fonts';
+import { ThemeProvider } from "@/components/darkmodel/theme-provider"
 
 
 

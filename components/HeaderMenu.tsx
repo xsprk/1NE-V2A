@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image";
 import Github from "./icos/GitHub";
-import { ThemeToggle } from "./ThemeToggle";
+import { ModeToggle } from "./darkmodel/modeToggle";
 
 export function HeaderMenu() {
     return (
@@ -11,8 +11,7 @@ export function HeaderMenu() {
             <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
                 <Link href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
                     <Image
-                        src="/favicon.svg"
-                        className="dark:invert"
+                        src="favicon.svg"
                         width={50}
                         height={12}
                         alt="qianniu Logo" />
@@ -39,7 +38,7 @@ export function HeaderMenu() {
                         </span>
                         <span>Star on GitHub</span>
                     </Link>
-                    <ThemeToggle />
+                    <ModeToggle />
                 </div>
             </div>
         </nav>

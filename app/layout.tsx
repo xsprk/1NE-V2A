@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     default: 'video to audio converter',
   },
   description: "A Browser-Based Video to Audio Converter",
-  metadataBase: new URL('v2a.1ne.in.net'),
+  metadataBase: new URL('https://www.qianniuspace.com/'),
 };
 
 export default function RootLayout({

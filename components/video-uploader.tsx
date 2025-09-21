@@ -21,7 +21,7 @@ export default function VideoUploader({
   const [data, setData] = useState<{ audio: string | null }>({
     audio: null,
   });
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   const onChangeAudio = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
       console.log(event.currentTarget.files);

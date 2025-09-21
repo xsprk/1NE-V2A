@@ -1,5 +1,5 @@
 <p align="left">
-    <a href="README_CN.md">中文</a>&nbsp ｜ &nbspEnglish&nbsp 
+    <a href="README_CN.md"></a>&nbsp ｜ &nbspEnglish&nbsp 
 </p>
 
 
@@ -49,7 +49,7 @@ Make sure you have Node.js installed (the latest stable version is recommended).
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/qianniucity/video2audio.git
+git clone 
 cd video2audio
 ```
 2. Install the dependencies:
@@ -96,6 +96,4 @@ This is a [Next.js](https://nextjs.org/) project template created with [`create-
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The easiest way to deploy your Next.js app

@@ -1,3 +1,5 @@
+// Remove or comment this line
+// import Github from "../components/Github";
 "use client"
 
 import Link from "next/link"

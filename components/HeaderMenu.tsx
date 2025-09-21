@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/linm"
+import Link from "next/link"
 import Image from "";
 import Github from "";
 import { ModeToggle } from "./darkmodel/modeToggle";

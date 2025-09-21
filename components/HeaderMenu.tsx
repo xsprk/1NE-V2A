@@ -6,7 +6,6 @@ import Link from "next/link"
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Image from "next/image";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import Github from "../components/Github";
 import { ModeToggle } from "./darkmodel/modeToggle";
 
 export function HeaderMenu() {

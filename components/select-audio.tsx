@@ -12,7 +12,7 @@ export function SelectAudio({
     step,
     setStep,
 }: SelectAudioFormProps) {
-    const [audioType, setAudioType] = useState<string>("wav");
+    const [audioType, setAudioType] = useState<string>("mp3");
 
     const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedValue = event.target.value;

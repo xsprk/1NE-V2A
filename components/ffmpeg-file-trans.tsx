@@ -115,10 +115,10 @@ export default function FfmpegFileTrans({
     disabled={!file}
     type="button"
     className={`text-white font-medium rounded-lg text-sm px-5 py-2.5 ${
-      file && step === 1
-        ? "bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700"
-        : "bg-gray-500 cursor-not-allowed"
-    }`}
+  file && step === 1
+    ? "bg-blue-700 hover:bg-blue-800"
+    : "bg-gray-500 cursor-not-allowed"
+}`}
   >
     Transcode to {audioType}
   </button>

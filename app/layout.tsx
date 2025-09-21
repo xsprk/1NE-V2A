@@ -10,11 +10,11 @@ import { ThemeProvider } from "@/components/darkmodel/theme-provider"
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | video to audio converter',
+    template: '%s | 1NE video to audio converter',
     default: 'video to audio converter',
   },
   description: "A Browser-Based Video to Audio Converter",
-  metadataBase: new URL('https://qianniuspace.com'),
+  metadataBase: new URL('v2a.1ne.in.net'),
 };
 
 export default function RootLayout({

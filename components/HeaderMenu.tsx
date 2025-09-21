@@ -1,8 +1,10 @@
 "use client"
 
 import Link from "next/link"
-import Image from "";
-import Github from "";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import Image from "next/image";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import Github from "../components/Github";
 import { ModeToggle } from "./darkmodel/modeToggle";
 
 export function HeaderMenu() {

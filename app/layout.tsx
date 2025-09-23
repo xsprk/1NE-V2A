@@ -35,8 +35,11 @@ export default function RootLayout({
         />
         <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID ?? ''} />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? ''} />
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4868101519453026"
-     crossorigin="anonymous"></script>
+      <script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4868101519453026"
+  crossOrigin="anonymous"
+></script>
       </head>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider
